@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/header.css">
+    <link rel="stylesheet" href="../static/main.css">
+    <link rel="stylesheet" href="../static/footer.css">
+    <title>HeaderAndFooter</title>
+</head>
+<body>
+<header th:fragment="header">
+    <img th:src="@{logo.png}" alt="logo" width="100" height="100"/>
+    <h1 style="position: relative">Password Storage</h1>
+    <div class="topnav">
+        <a href="home">Home</a>
+        <a href="view">View Records</a>
+        <a href="search">Search</a>
+    </div>
+</header>
+<main>
+    Some content in the main tag.
+</main>
+<footer th:fragment="footer">
+    Sheridan College Lucas Robaszek 991727191
+</footer>
+</body>
+</html>

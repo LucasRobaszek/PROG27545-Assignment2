@@ -1,5 +1,5 @@
-package ca.sheridan.robaszel.assignment2.beans;
 //Lucas Robaszek 991727191
+package ca.sheridan.robaszel.assignment2.beans;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -13,7 +13,6 @@ import java.io.Serializable;
 @Entity
 public class PasswordRecord implements Serializable{
     @Id
-    @NonNull
     @Column(name="ID")
     private Long id;
     @Column(name="TITLE")
@@ -26,6 +25,6 @@ public class PasswordRecord implements Serializable{
     private String url;
     @Column(name="EMAIL")
     private String email;
-    @Column(name="Notes")
+    @Column(name="NOTES")
     private String notes;
 }

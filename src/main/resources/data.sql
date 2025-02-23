@@ -1,3 +1,4 @@
+-- Lucas Robaszek 991727191
 INSERT INTO PASSWORD_RECORD(ID,TITLE,USERNAME,PASSWORD,URL,EMAIL,NOTES) VALUES
     (146823793,'Google','JohnJohnson','wordpass123','google.com','johnjohnson@gmail.com', ''),
     (489137582,'Microsoft','JohnJohnson','Riley123*','microsoft.com','johnjohnson@gmail.com',''),

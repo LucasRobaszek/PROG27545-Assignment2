@@ -1,10 +1,30 @@
+<!--Lucas Robaszek-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/header.css" th:href="@{/header.css}">
+    <link rel="stylesheet" href="../static/main.css" th:href="@{/main.css}">
+    <link rel="stylesheet" href="../static/footer.css" th:href="@{/footer.css}">
     <title></title>
 </head>
 <body>
-
+<header th:replace="~{HeaderAndFooter::Header}">
+</header>
+<main>
+    <form action="#" th:action="@{/}" th:object="${passwordRecord}" method="post">
+        <input type="number" th:field="*{id}"  hidden/><br>
+        Title: <input type="text" th:field="*{title}"/> <br>
+        Username: <input type="text" th:field="*{username}" /> <br>
+        Password: <input type="text" th:field="*{password}" /> <br>
+        URL: <input type="text" th:field="*{url}" /> <br>
+        Email: <input type="text" th:field="*{email}" /> <br>
+        Notes: <input type="text" th:field="*{notes}" /> <br>
+        <input type="submit" value="Add Password Record"/>
+    </form>
+    <h2 th:if="${recordAdded == true}">Record added successfully! </h2>
+</main>
+<footer th:replace="~{HeaderAndFooter::Footer}">
+</footer>
 </body>
 </html>

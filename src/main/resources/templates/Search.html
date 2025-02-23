@@ -1,0 +1,46 @@
+<!--Lucas Robaszek-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/header.css" th:href="@{/header.css}">
+    <link rel="stylesheet" href="../static/main.css" th:href="@{/main.css}">
+    <link rel="stylesheet" href="../static/footer.css" th:href="@{/footer.css}">
+    <title></title>
+</head>
+<body>
+<header th:replace="~{HeaderAndFooter::Header}">
+</header>
+<main>
+    <form action="#" th:action="@{/search}" method="post">
+        Title: <input type="text" name="title"/> <br>
+        <input type="submit" value="Search"/>
+    </form>
+    <h2 th:if="${#lists.isEmpty(pswdList) && searched == true}">No Records Found</h2>
+    <div th:if="${ not#lists.isEmpty(pswdList)}">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>URL</th>
+                <th>Email</th>
+                <th>Notes</th>
+            </tr>
+            <tr th:each="pswd : ${pswdList}">
+                <td th:text="${pswd.id}"></td>
+                <td th:text="${pswd.title}"></td>
+                <td th:text="${pswd.username}"></td>
+                <td th:text="${pswd.password}"></td>
+                <td th:text="${pswd.url}"></td>
+                <td th:text="${pswd.email}"></td>
+                <td th:text="${pswd.notes}"></td>
+            </tr>
+        </table>
+    </div>
+</main>
+<footer th:replace="~{HeaderAndFooter::Footer}">
+</footer>
+</body>
+</html>
